@@ -10,6 +10,7 @@ namespace Banking.App
         {
             static List<BankAccount> accounts;
             static void Main(string[] args)
+            
         {
             
                 // Ensure console can display Unicode currency symbols and numbers use en-US formatting
