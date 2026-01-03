@@ -10,7 +10,8 @@ namespace Banking.App
         {
             static List<BankAccount> accounts;
             static void Main(string[] args)
-            {
+        {
+            
                 // Ensure console can display Unicode currency symbols and numbers use en-US formatting
                 Console.OutputEncoding = Encoding.UTF8;
                 Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
@@ -95,7 +96,7 @@ namespace Banking.App
                         {
                             Console.Write("Enter PIN: ");
                             var pin = Console.ReadLine();
-                            if (pin == account.Pin)
+                            if (pin != null && account.VerifyPin(pin))
                             {
                                 AccountMenu(account);
                                 return;
@@ -191,4 +192,6 @@ namespace Banking.App
                 }
             }
         }
-    } 
+    }
+
+                    
